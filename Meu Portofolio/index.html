@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Gabriel Tomás - Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-code"></i>
+                <span>Portfólio Nicolas</span>
+            </div>
+            <nav class="nav">
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#projects" class="nav-link">Projetos</a>
+                <a href="#skills" class="nav-link">Habilidades</a>
+                <a href="#contact" class="nav-link">Contato</a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="avatar">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img-logo.jpg-N2dkvKrqZrvCav4AGvh5E91Duz1Yd7.jpeg"
+                        alt="Foto de perfil" class="avatar-img">
+                </div>
+                <h1 class="hero-title">Nicolas Gabriel Tomás</h1>
+                <p class="hero-description">
+                    Estudante de Engenharia da Computação em transição para a área de desenvolvimento de software, com
+                    foco em web.
+                    Atualmente, aprimorando habilidades em HTML, CSS, JavaScript e Git, e em constante evolução para
+                    atuar como
+                    desenvolvedor front-end. Comprometido em criar interfaces modernas e responsivas, aliando boas
+                    práticas de código
+                    à experiência do usuário.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Entre em Contato
+                    </a>
+                    <a href="assets/Curriculo Nicolas.pdf" class="btn btn-outline" download>
+                        <i class="fas fa-download"></i>
+                        Download CV
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/nicolasgabrieltomas" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nicolas-gabriel-tomas" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre mim Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-card">
+                <p class="about-text">
+                    Sou estudante de Engenharia da Computação e desenvolvedor em formação, focado em criar aplicações
+                    web
+                    modernas e funcionais. Tenho paixão por aprender novas tecnologias, resolver problemas e transformar
+                    ideias em soluções práticas através do código.
+                </p>
+                <p class="about-text">
+                    Minha jornada começou com curiosidade sobre como os sites funcionam e, desde então, venho me
+                    dedicando
+                    a estudar e aplicar HTML, CSS, JavaScript e Git, sempre buscando evoluir e me aproximar do nível
+                    profissional no desenvolvimento web.
+                </p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-code feature-icon"></i>
+                        <h3>Clean Code</h3>
+                        <p>Código limpo e bem documentado</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-palette feature-icon"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>Interfaces intuitivas e atrativas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-code"></i>
+                            <span>Projeto em breve</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Em desenvolvimento</h3>
+                        <p class="project-description">Novos projetos em breve...</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-code"></i>
+                            <span>Projeto em breve</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Em desenvolvimento</h3>
+                        <p class="project-description">Novos projetos em breve...</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-image">
+                            <i class="fas fa-code"></i>
+                            <span>Projeto em breve</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Em desenvolvimento</h3>
+                        <p class="project-description">Novos projetos em breve...</p>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-sm btn-outline">
+                                <i class="fab fa-github"></i>
+                                Código
+                            </a>
+                            <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades e ferramentas que ja utilizei</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3 class="skill-category">Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3 class="skill-category">Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Typescript</span>
+                        <span class="skill-tag">C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Vamos Trabalhar Juntos?</h2>
+            <p class="contact-description">
+                Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato e vamos conversar
+                sobre como posso ajudar!
+            </p>
+            
+           
+            <div class="contact-card">
+                <!-- Email  -->
+                <div class="contact-item">
+                    <a href="mailto:nic.gabriel.tom@gmail.com" class="contact-btn email-btn">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">nic.gabriel.tom@gmail.com</span>
+                        </div>
+                    </a>
+                    <div class="emoji-message email-message">
+                        <span class="emoji">📧</span>
+                        <span class="message-text">Entre em contato por e-mail!</span>
+                    </div>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="contact-item">
+                    <a href="https://wa.me/5549998356772" target="_blank" class="contact-btn whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <div class="contact-text">
+                            <span class="contact-label">WhatsApp</span>
+                            <span class="contact-value">(49) 99835-6772</span>
+                        </div>
+                    </a>
+                    <div class="emoji-message whatsapp-message">
+                        <span class="emoji">💬</span>
+                        <span class="message-text">Chama no Zap!</span>
+                    </div>
+                </div>
+                
+                <!-- Instagram -->
+                <div class="contact-item">
+                    <a href="https://instagram.com/nicolastomass_" target="_blank" class="contact-btn instagram-btn">
+                        <i class="fab fa-instagram"></i>
+                        <div class="contact-text">
+                            <span class="contact-label">Instagram</span>
+                            <span class="contact-value">@nicolastomass_</span>
+                        </div>
+                    </a>
+                    <div class="emoji-message instagram-message">
+                        <span class="emoji">📱</span>
+                        <span class="message-text">Me segue lá!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-links">
+                <a href="https://github.com/nicolasgabrieltomas" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/nicolas-gabriel-tomas" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Nicolas Gabriel Tomás. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
