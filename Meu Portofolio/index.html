@@ -1,286 +1,713 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas Gabriel Tomás - Portfólio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nicolas Gabriel Tomás | Desenvolvedor Web</title>
+  <meta name="description" content="Portfólio de Nicolas Gabriel Tomás, estudante de Engenharia da Computação e desenvolvedor web em formação. Projetos, tecnologias e contato.">
+  <meta name="author" content="Nicolas Gabriel Tomás">
+  <meta name="theme-color" content="#0b0e13">
+  <link rel="canonical" href="https://portfolio-nicolastomas.netlify.app/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://portfolio-nicolastomas.netlify.app/">
+  <meta property="og:title" content="Nicolas Gabriel Tomás | Desenvolvedor Web">
+  <meta property="og:description" content="Estudante de Engenharia da Computação e desenvolvedor web em formação. Conheça meus projetos e entre em contato.">
+  <meta property="og:image" content="https://portfolio-nicolastomas.netlify.app/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nicolas Gabriel Tomás | Desenvolvedor Web">
+  <meta name="twitter:description" content="Estudante de Engenharia da Computação e desenvolvedor web em formação.">
+  <meta name="twitter:image" content="https://portfolio-nicolastomas.netlify.app/assets/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nicolas Gabriel Tomás",
+    "url": "https://portfolio-nicolastomas.netlify.app/",
+    "image": "https://portfolio-nicolastomas.netlify.app/assets/nicolas-hero.webp",
+    "jobTitle": "Desenvolvedor web em formação",
+    "email": "mailto:nic.gabriel.tom@gmail.com",
+    "sameAs": [
+      "https://github.com/nicolasgabrieltomas",
+      "https://www.linkedin.com/in/nicolas-gabriel-tomas",
+      "https://instagram.com/nicolastomass_"
+    ]
+  }
+  </script>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-brand">
-                <i class="fas fa-code"></i>
-                <span>Portfólio Nicolas</span>
-            </div>
-            <nav class="nav">
-                <a href="#about" class="nav-link">Sobre</a>
-                <a href="#projects" class="nav-link">Projetos</a>
-                <a href="#skills" class="nav-link">Habilidades</a>
-                <a href="#contact" class="nav-link">Contato</a>
-            </nav>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="avatar">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img-logo.jpg-N2dkvKrqZrvCav4AGvh5E91Duz1Yd7.jpeg"
-                        alt="Foto de perfil" class="avatar-img">
-                </div>
-                <h1 class="hero-title">Nicolas Gabriel Tomás</h1>
-                <p class="hero-description">
-                    Estudante de Engenharia da Computação em transição para a área de desenvolvimento de software, com
-                    foco em web.
-                    Atualmente, aprimorando habilidades em HTML, CSS, JavaScript e Git, e em constante evolução para
-                    atuar como
-                    desenvolvedor front-end. Comprometido em criar interfaces modernas e responsivas, aliando boas
-                    práticas de código
-                    à experiência do usuário.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i>
-                        Entre em Contato
-                    </a>
-                    <a href="assets/Curriculo Nicolas.pdf" class="btn btn-outline" download>
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/nicolasgabrieltomas" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/nicolas-gabriel-tomas" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-            </div>
+  <!-- Ícones reutilizados via <use> -->
+  <svg class="sr-only" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+      </symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+      </symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+      </symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </symbol>
+      <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      </symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </symbol>
+      <symbol id="i-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      </symbol>
+      <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+      </symbol>
+      <symbol id="i-graduation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+      </symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </symbol>
+      <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>
+      </symbol>
+      <symbol id="i-react" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+      </symbol>
+      <symbol id="i-node" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+        <path d="M12 2l8.66 5v10L12 22l-8.66-5V7z"/><path d="M12 22V12M12 12l8.66-5M12 12L3.34 7" stroke-width="1.2" opacity=".55"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="brand" aria-label="Nicolas Gabriel Tomás — voltar ao início">
+        <span class="brand__mark" aria-hidden="true">N</span>
+        <span class="brand__name">Nicolas Gabriel Tomás</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu">
+        <svg class="nav-toggle__open" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="nav-toggle__close" width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Início</a></li>
+          <li><a class="nav__link" href="#sobre">Sobre</a></li>
+          <li><a class="nav__link" href="#projetos">Projetos</a></li>
+          <li><a class="nav__link" href="#habilidades">Habilidades</a></li>
+          <li><a class="nav__link" href="#experiencia">Experiência</a></li>
+          <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+        <a href="#contato" class="btn btn--primary btn--sm nav__cta">Vamos conversar</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Estudante de Engenharia da Computação</p>
+          <h1 class="hero__title" id="hero-title">
+            Transformando ideias em <span class="text-gradient">experiências digitais.</span>
+          </h1>
+          <p class="hero__lead">
+            Sou Nicolas Gabriel Tomás, estudante de Engenharia da Computação e desenvolvedor em formação,
+            focado em criar aplicações web modernas, funcionais e responsivas.
+          </p>
+          <div class="hero__actions">
+            <a href="#projetos" class="btn btn--primary">
+              Ver meus projetos
+              <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a href="#contato" class="btn btn--ghost">Entre em contato</a>
+          </div>
+          <ul class="social" aria-label="Redes sociais">
+            <li><a class="social__link" href="https://github.com/nicolasgabrieltomas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="20" height="20" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a class="social__link" href="https://www.linkedin.com/in/nicolas-gabriel-tomas" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a class="social__link" href="https://instagram.com/nicolastomass_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+          </ul>
         </div>
+
+        <div class="hero__visual">
+          <div class="portrait">
+            <div class="portrait__ring" aria-hidden="true"></div>
+            <img class="portrait__img" src="assets/nicolas-hero.webp" width="880" height="1100" alt="Nicolas Gabriel Tomás sorrindo, de braços cruzados, vestindo camiseta preta." fetchpriority="high">
+            <div class="portrait__badge">
+              <span class="portrait__dot" aria-hidden="true"></span>
+              Aberto a oportunidades
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Sobre mim Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
-            <div class="about-card">
-                <p class="about-text">
-                    Sou estudante de Engenharia da Computação e desenvolvedor em formação, focado em criar aplicações
-                    web
-                    modernas e funcionais. Tenho paixão por aprender novas tecnologias, resolver problemas e transformar
-                    ideias em soluções práticas através do código.
-                </p>
-                <p class="about-text">
-                    Minha jornada começou com curiosidade sobre como os sites funcionam e, desde então, venho me
-                    dedicando
-                    a estudar e aplicar HTML, CSS, JavaScript e Git, sempre buscando evoluir e me aproximar do nível
-                    profissional no desenvolvimento web.
-                </p>
-                <div class="features">
-                    <div class="feature">
-                        <i class="fas fa-code feature-icon"></i>
-                        <h3>Clean Code</h3>
-                        <p>Código limpo e bem documentado</p>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-palette feature-icon"></i>
-                        <h3>UI/UX Design</h3>
-                        <p>Interfaces intuitivas e atrativas</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- ===================== INDICADORES ===================== -->
+    <section class="indicators" aria-label="Resumo profissional">
+      <div class="container">
+        <ul class="indicators__list reveal">
+          <li class="indicator">
+            <svg width="22" height="22" aria-hidden="true"><use href="#i-cpu"/></svg>
+            <span>Engenharia da Computação</span>
+          </li>
+          <li class="indicator">
+            <svg width="22" height="22" aria-hidden="true"><use href="#i-globe"/></svg>
+            <span>Desenvolvimento Web</span>
+          </li>
+          <li class="indicator">
+            <svg width="22" height="22" aria-hidden="true"><use href="#i-trending"/></svg>
+            <span>Aprendizado contínuo</span>
+          </li>
+          <li class="indicator">
+            <svg width="22" height="22" aria-hidden="true"><use href="#i-briefcase"/></svg>
+            <span>Experiência administrativa &amp; comercial</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Projetos Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Meus Projetos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-code"></i>
-                            <span>Projeto em breve</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Em desenvolvimento</h3>
-                        <p class="project-description">Novos projetos em breve...</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm btn-outline">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                            <a href="#" class="btn btn-sm btn-primary">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo
-                            </a>
-                        </div>
-                    </div>
+    <!-- ===================== SOBRE ===================== -->
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about">
+        <div class="about__visual reveal">
+          <figure class="photo-card">
+            <img src="assets/nicolas-retrato.webp" width="900" height="1200" alt="Nicolas Gabriel Tomás em pé, sorrindo, com as mãos nos bolsos." loading="lazy">
+            <figcaption class="photo-card__facts">
+              <dl>
+                <div>
+                  <dt>Formação</dt>
+                  <dd>Engenharia da Computação · em andamento</dd>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-code"></i>
-                            <span>Projeto em breve</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Em desenvolvimento</h3>
-                        <p class="project-description">Novos projetos em breve...</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm btn-outline">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                            <a href="#" class="btn btn-sm btn-primary">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo
-                            </a>
-                        </div>
-                    </div>
+                <div>
+                  <dt>Foco</dt>
+                  <dd>Desenvolvimento web · front-end</dd>
                 </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="placeholder-image">
-                            <i class="fas fa-code"></i>
-                            <span>Projeto em breve</span>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Em desenvolvimento</h3>
-                        <p class="project-description">Novos projetos em breve...</p>
-                        <div class="project-links">
-                            <a href="#" class="btn btn-sm btn-outline">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                            <a href="#" class="btn btn-sm btn-primary">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo
-                            </a>
-                        </div>
-                    </div>
+                <div>
+                  <dt>Atualmente</dt>
+                  <dd>Auxiliar financeiro / suporte comercial</dd>
                 </div>
-            </div>
+                <div>
+                  <dt>Objetivo</dt>
+                  <dd>Ingressar na área de tecnologia como desenvolvedor</dd>
+                </div>
+              </dl>
+            </figcaption>
+          </figure>
         </div>
-    </section>
 
-    <!-- Habilidades Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Habilidades e ferramentas que ja utilizei</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3 class="skill-category">Frontend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <h3 class="skill-category">Backend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Typescript</span>
-                        <span class="skill-tag">C</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Vamos Trabalhar Juntos?</h2>
-            <p class="contact-description">
-                Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato e vamos conversar
-                sobre como posso ajudar!
+        <div class="about__content">
+          <p class="eyebrow reveal">Sobre mim</p>
+          <h2 class="section__title reveal" id="sobre-title">Construindo minha carreira em tecnologia, um projeto de cada vez.</h2>
+          <div class="prose reveal">
+            <p>
+              Minha relação com tecnologia começou pela curiosidade de entender como as coisas funcionam por trás da tela.
+              Essa curiosidade virou escolha de carreira: hoje curso Engenharia da Computação e dedico meu tempo a transformar
+              o conhecimento acadêmico em projetos práticos, principalmente na web.
             </p>
-            
-           
-            <div class="contact-card">
-                <!-- Email  -->
-                <div class="contact-item">
-                    <a href="mailto:nic.gabriel.tom@gmail.com" class="contact-btn email-btn">
-                        <i class="fas fa-envelope"></i>
-                        <div class="contact-text">
-                            <span class="contact-label">Email</span>
-                            <span class="contact-value">nic.gabriel.tom@gmail.com</span>
-                        </div>
-                    </a>
-                    <div class="emoji-message email-message">
-                        <span class="emoji">📧</span>
-                        <span class="message-text">Entre em contato por e-mail!</span>
-                    </div>
-                </div>
+            <p>
+              Antes de migrar para a área, atuei no setor administrativo, financeiro e de suporte comercial. Essa vivência
+              me trouxe organização, responsabilidade, contato direto com clientes e o hábito de resolver problemas reais
+              do dia a dia — características que levo para cada linha de código.
+            </p>
+            <p>
+              Estou em constante aprendizado, evoluindo em HTML, CSS, JavaScript, TypeScript, React e Node.js, e buscando
+              uma oportunidade para crescer como desenvolvedor web.
+            </p>
+          </div>
 
-                <!-- WhatsApp -->
-                <div class="contact-item">
-                    <a href="https://wa.me/5549998356772" target="_blank" class="contact-btn whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        <div class="contact-text">
-                            <span class="contact-label">WhatsApp</span>
-                            <span class="contact-value">(49) 99835-6772</span>
-                        </div>
-                    </a>
-                    <div class="emoji-message whatsapp-message">
-                        <span class="emoji">💬</span>
-                        <span class="message-text">Chama no Zap!</span>
-                    </div>
-                </div>
-                
-                <!-- Instagram -->
-                <div class="contact-item">
-                    <a href="https://instagram.com/nicolastomass_" target="_blank" class="contact-btn instagram-btn">
-                        <i class="fab fa-instagram"></i>
-                        <div class="contact-text">
-                            <span class="contact-label">Instagram</span>
-                            <span class="contact-value">@nicolastomass_</span>
-                        </div>
-                    </a>
-                    <div class="emoji-message instagram-message">
-                        <span class="emoji">📱</span>
-                        <span class="message-text">Me segue lá!</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-links">
-                <a href="https://github.com/nicolasgabrieltomas" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/nicolas-gabriel-tomas" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
-                </a>
-            </div>
+          <ul class="mini-cards reveal">
+            <li class="mini-card">
+              <svg width="22" height="22" aria-hidden="true"><use href="#i-code"/></svg>
+              <h3>Desenvolvimento Web</h3>
+              <p>Interfaces modernas, responsivas e acessíveis.</p>
+            </li>
+            <li class="mini-card">
+              <svg width="22" height="22" aria-hidden="true"><use href="#i-trending"/></svg>
+              <h3>Aprendizado Contínuo</h3>
+              <p>Estudo constante de novas tecnologias e boas práticas.</p>
+            </li>
+            <li class="mini-card">
+              <svg width="22" height="22" aria-hidden="true"><use href="#i-bulb"/></svg>
+              <h3>Resolução de Problemas</h3>
+              <p>Transformar necessidades reais em soluções funcionais.</p>
+            </li>
+          </ul>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Nicolas Gabriel Tomás. Todos os direitos reservados.</p>
+    <!-- ===================== PROJETOS ===================== -->
+    <section class="section section--alt" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Projetos</p>
+          <h2 class="section__title" id="projetos-title">O que eu já desenvolvi</h2>
+          <p class="section__desc">Projetos reais, criados para resolver necessidades reais.</p>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="projects">
+
+          <!-- Projeto: Portal de Vendas Sabor & Saúde -->
+          <article class="project reveal">
+            <div class="project__media">
+              <!-- Prévia ilustrativa (aplicação interna, sem link público).
+                   Para usar uma captura de tela real, substitua este bloco por:
+                   <img src="assets/projeto-sabor-saude.webp" alt="Tela do Portal de Vendas" loading="lazy"> -->
+              <div class="mock" aria-hidden="true">
+                <div class="mock__bar"><span></span><span></span><span></span></div>
+                <div class="mock__body">
+                  <div class="mock__side">
+                    <i class="mock__search"></i>
+                    <i></i><i></i><i></i><i></i>
+                  </div>
+                  <div class="mock__main">
+                    <div class="mock__grid">
+                      <i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                  </div>
+                  <div class="mock__cart">
+                    <i></i><i></i><i></i>
+                    <b></b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__meta">
+                <span class="tag tag--accent">Aplicação web</span>
+                <span class="tag">Projeto interno</span>
+              </div>
+              <h3 class="project__title">Portal de Vendas — Sabor &amp; Saúde Alimentos</h3>
+              <p class="project__desc">
+                Aplicação desenvolvida para facilitar a seleção de produtos por clientes e auxiliar o processo
+                de lançamento de pedidos da empresa.
+              </p>
+              <ul class="project__features" aria-label="Funcionalidades">
+                <li>Catálogo de produtos</li>
+                <li>Busca e filtros</li>
+                <li>Carrinho</li>
+                <li>Autenticação</li>
+                <li>Área administrativa</li>
+                <li>Gerenciamento de produtos e pedidos</li>
+                <li>Exportação de pedidos para CSV/Excel</li>
+              </ul>
+              <ul class="project__stack" aria-label="Tecnologias">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project__actions">
+                <!-- Sem link público: aplicação de uso interno da empresa.
+                     Se houver demo/repositório, use:
+                     <a class="btn btn--primary btn--sm" href="URL" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                     <a class="btn btn--ghost btn--sm" href="URL" target="_blank" rel="noopener noreferrer">Ver código</a> -->
+                <span class="project__note">Aplicação de uso interno — sem link público.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto: Site institucional AD Capinzal -->
+          <article class="project reveal">
+            <div class="project__media">
+              <img src="assets/projeto-ad-capinzal.webp" width="1000" height="625" alt="Vista aérea da sede da Igreja Assembleia de Deus de Capinzal, imagem de capa do site." loading="lazy">
+            </div>
+            <div class="project__body">
+              <div class="project__meta">
+                <span class="tag tag--accent">Site institucional</span>
+                <span class="tag">Publicado</span>
+              </div>
+              <h3 class="project__title">Site institucional — Assembleia de Deus de Capinzal</h3>
+              <p class="project__desc">
+                Site completo, responsivo e acessível para a igreja, com programação de cultos, congregações,
+                eventos, devocionais, ministérios, galeria e vídeos — tudo editável a partir de arquivos de dados.
+              </p>
+              <ul class="project__features" aria-label="Funcionalidades">
+                <li>Páginas com roteamento</li>
+                <li>Programação semanal e mensal</li>
+                <li>Lista de congregações</li>
+                <li>Eventos e devocionais</li>
+                <li>Galeria e vídeos</li>
+                <li>Conteúdo editável em arquivos de dados</li>
+              </ul>
+              <ul class="project__stack" aria-label="Tecnologias">
+                <li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Vite</li>
+              </ul>
+              <div class="project__actions">
+                <a class="btn btn--primary btn--sm" href="https://ad-capinzal-site.vercel.app" target="_blank" rel="noopener noreferrer">
+                  Ver projeto
+                  <svg width="16" height="16" aria-hidden="true"><use href="#i-external"/></svg>
+                </a>
+                <!-- Repositório privado. Se tornar público, adicione:
+                     <a class="btn btn--ghost btn--sm" href="https://github.com/nicolasgabrieltomas/ad-capinzal-site" target="_blank" rel="noopener noreferrer">Ver código</a> -->
+              </div>
+            </div>
+          </article>
+
+          <!-- MODELO PARA NOVOS PROJETOS — copie, cole e preencha:
+          <article class="project reveal">
+            <div class="project__media">
+              <img src="assets/NOME-DA-IMAGEM.webp" width="1000" height="625" alt="Descrição da imagem" loading="lazy">
+            </div>
+            <div class="project__body">
+              <div class="project__meta">
+                <span class="tag tag--accent">Tipo do projeto</span>
+              </div>
+              <h3 class="project__title">Nome do projeto</h3>
+              <p class="project__desc">Descrição curta do que o projeto faz e para quem.</p>
+              <ul class="project__features" aria-label="Funcionalidades">
+                <li>Funcionalidade 1</li><li>Funcionalidade 2</li>
+              </ul>
+              <ul class="project__stack" aria-label="Tecnologias">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project__actions">
+                <a class="btn btn--primary btn--sm" href="URL-DA-DEMO" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+                <a class="btn btn--ghost btn--sm" href="URL-DO-REPOSITORIO" target="_blank" rel="noopener noreferrer">Ver código</a>
+              </div>
+            </div>
+          </article>
+          -->
+        </div>
+
+        <p class="projects__more reveal">
+          <a href="https://github.com/nicolasgabrieltomas" target="_blank" rel="noopener noreferrer" class="link-arrow">
+            Acompanhe novos projetos no GitHub
+            <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== HABILIDADES ===================== -->
+    <section class="section" id="habilidades" aria-labelledby="habilidades-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Habilidades</p>
+          <h2 class="section__title" id="habilidades-title">Tecnologias &amp; Ferramentas</h2>
+          <p class="section__desc">O que uso para construir e organizar meus projetos.</p>
+        </div>
+
+        <div class="skills">
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Front-end</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill__icon skill__icon--text" aria-hidden="true">&lt;/&gt;</span>
+                <div><strong>HTML</strong><p>Estrutura semântica e acessível</p></div>
+              </li>
+              <li class="skill">
+                <span class="skill__icon skill__icon--text" aria-hidden="true">{ }</span>
+                <div><strong>CSS</strong><p>Layouts responsivos com Flexbox e Grid</p></div>
+              </li>
+              <li class="skill">
+                <span class="skill__icon skill__icon--text" aria-hidden="true">JS</span>
+                <div><strong>JavaScript</strong><p>Interatividade e manipulação do DOM</p></div>
+              </li>
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-react"/></svg></span>
+                <div><strong>React</strong><p>Interfaces baseadas em componentes</p></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Linguagens</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill__icon skill__icon--text" aria-hidden="true">JS</span>
+                <div><strong>JavaScript</strong><p>Linguagem principal para a web</p></div>
+              </li>
+              <li class="skill">
+                <span class="skill__icon skill__icon--text" aria-hidden="true">TS</span>
+                <div><strong>TypeScript</strong><p>Tipagem estática para código mais seguro</p></div>
+              </li>
+              <li class="skill">
+                <span class="skill__icon skill__icon--text" aria-hidden="true">C</span>
+                <div><strong>C</strong><p>Base em lógica, memória e algoritmos</p></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Back-end</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-node"/></svg></span>
+                <div><strong>Node.js</strong><p>JavaScript no servidor</p></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Ferramentas</h3>
+            <ul class="skill-list">
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-git"/></svg></span>
+                <div><strong>Git</strong><p>Controle de versão do código</p></div>
+              </li>
+              <li class="skill">
+                <span class="skill__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-github"/></svg></span>
+                <div><strong>GitHub</strong><p>Repositórios, colaboração e publicação</p></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIÊNCIA ===================== -->
+    <section class="section section--alt" id="experiencia" aria-labelledby="experiencia-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Experiência</p>
+          <h2 class="section__title" id="experiencia-title">Minha experiência</h2>
+          <p class="section__desc">Uma base administrativa e comercial que complementa minha formação em tecnologia.</p>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="card timeline__card">
+              <header class="timeline__head">
+                <div>
+                  <h3 class="timeline__role">Auxiliar de Financeiro / Suporte Comercial</h3>
+                  <p class="timeline__company">Sabor &amp; Saúde Alimentos</p>
+                </div>
+                <p class="timeline__period"><time datetime="2025">2025</time> — atual</p>
+              </header>
+              <ul class="timeline__list">
+                <li>Apoio às rotinas financeiras da empresa.</li>
+                <li>Suporte à equipe comercial no dia a dia.</li>
+                <li>Organização de informações, cadastro e classificação de produtos.</li>
+                <li>Organização do catálogo de produtos.</li>
+                <li>Desenvolvimento de soluções digitais para apoiar processos comerciais, como o Portal de Vendas.</li>
+              </ul>
+            </article>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="card timeline__card">
+              <header class="timeline__head">
+                <div>
+                  <h3 class="timeline__role">Secretário</h3>
+                  <p class="timeline__company">Libardoni Advogados</p>
+                </div>
+                <p class="timeline__period"><time datetime="2023-08">ago 2023</time> — <time datetime="2024-12">dez 2024</time></p>
+              </header>
+              <ul class="timeline__list">
+                <li>Atuação administrativa e de apoio em escritório de advocacia.</li>
+                <!-- Adicione aqui outras atividades exercidas no cargo. -->
+              </ul>
+            </article>
+          </li>
+        </ol>
+
+        <div class="card highlight reveal">
+          <h3 class="highlight__title">Como isso se conecta à tecnologia</h3>
+          <p>
+            A rotina administrativa e comercial me ensinou a lidar com prazos, organizar informações, atender clientes
+            e resolver problemas com responsabilidade. Hoje, aplico exatamente essas habilidades ao desenvolvimento
+            de software: entender a necessidade, estruturar a solução e entregar com cuidado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMAÇÃO ===================== -->
+    <section class="section" id="formacao" aria-labelledby="formacao-title">
+      <div class="container container--narrow">
+        <div class="section__head reveal">
+          <p class="eyebrow">Formação</p>
+          <h2 class="section__title" id="formacao-title">Formação acadêmica</h2>
+        </div>
+
+        <article class="card edu reveal">
+          <div class="edu__icon" aria-hidden="true">
+            <svg width="28" height="28"><use href="#i-graduation"/></svg>
+          </div>
+          <div class="edu__body">
+            <div class="edu__head">
+              <h3 class="edu__title">Engenharia da Computação</h3>
+              <span class="tag tag--accent">Em andamento</span>
+            </div>
+            <p class="edu__type">Bacharelado</p>
+            <!-- Para exibir a instituição e o período, descomente e preencha:
+            <p class="edu__school">Nome da instituição · 2023 — previsão 2028</p> -->
+            <p class="edu__desc">
+              Formação que une hardware e software, com base sólida em lógica de programação, algoritmos,
+              estruturas de dados e engenharia de software — conhecimento que aplico nos meus projetos web.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="section section--cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta reveal">
+          <div class="cta__glow" aria-hidden="true"></div>
+          <h2 class="cta__title" id="cta-title">Vamos construir algo juntos?</h2>
+          <p class="cta__text">
+            Estou em busca de oportunidades para continuar evoluindo na área de tecnologia, desenvolver novos
+            projetos e transformar conhecimento em soluções reais.
+          </p>
+          <a href="#contato" class="btn btn--primary btn--lg">
+            Entre em contato
+            <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO ===================== -->
+    <section class="section" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Contato</p>
+          <h2 class="section__title" id="contato-title">Fale comigo</h2>
+          <p class="section__desc">Escolha o canal que preferir — respondo assim que possível.</p>
+        </div>
+
+        <ul class="contact-grid">
+          <li class="contact-card card reveal">
+            <span class="contact-card__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-mail"/></svg></span>
+            <div class="contact-card__body">
+              <span class="contact-card__label">Email</span>
+              <a class="contact-card__value" href="mailto:nic.gabriel.tom@gmail.com">nic.gabriel.tom@gmail.com</a>
+            </div>
+            <button class="copy-btn" type="button" data-copy="nic.gabriel.tom@gmail.com" aria-label="Copiar email">
+              <svg class="copy-btn__icon" width="18" height="18" aria-hidden="true"><use href="#i-copy"/></svg>
+              <svg class="copy-btn__done" width="18" height="18" aria-hidden="true"><use href="#i-check"/></svg>
+              <span class="copy-btn__text">Copiar</span>
+            </button>
+          </li>
+
+          <li class="contact-card card reveal">
+            <span class="contact-card__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-whatsapp"/></svg></span>
+            <div class="contact-card__body">
+              <span class="contact-card__label">WhatsApp</span>
+              <a class="contact-card__value" href="https://wa.me/5549998356772" target="_blank" rel="noopener noreferrer">(49) 99835-6772</a>
+            </div>
+            <svg class="contact-card__arrow" width="18" height="18" aria-hidden="true"><use href="#i-external"/></svg>
+          </li>
+
+          <li class="contact-card card reveal">
+            <span class="contact-card__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-linkedin"/></svg></span>
+            <div class="contact-card__body">
+              <span class="contact-card__label">LinkedIn</span>
+              <a class="contact-card__value" href="https://www.linkedin.com/in/nicolas-gabriel-tomas" target="_blank" rel="noopener noreferrer">/in/nicolas-gabriel-tomas</a>
+            </div>
+            <svg class="contact-card__arrow" width="18" height="18" aria-hidden="true"><use href="#i-external"/></svg>
+          </li>
+
+          <li class="contact-card card reveal">
+            <span class="contact-card__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-github"/></svg></span>
+            <div class="contact-card__body">
+              <span class="contact-card__label">GitHub</span>
+              <a class="contact-card__value" href="https://github.com/nicolasgabrieltomas" target="_blank" rel="noopener noreferrer">@nicolasgabrieltomas</a>
+            </div>
+            <svg class="contact-card__arrow" width="18" height="18" aria-hidden="true"><use href="#i-external"/></svg>
+          </li>
+
+          <li class="contact-card card reveal">
+            <span class="contact-card__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-instagram"/></svg></span>
+            <div class="contact-card__body">
+              <span class="contact-card__label">Instagram</span>
+              <a class="contact-card__value" href="https://instagram.com/nicolastomass_" target="_blank" rel="noopener noreferrer">@nicolastomass_</a>
+            </div>
+            <svg class="contact-card__arrow" width="18" height="18" aria-hidden="true"><use href="#i-external"/></svg>
+          </li>
+
+          <li class="contact-card card reveal">
+            <span class="contact-card__icon" aria-hidden="true"><svg width="22" height="22"><use href="#i-download"/></svg></span>
+            <div class="contact-card__body">
+              <span class="contact-card__label">Currículo</span>
+              <a class="contact-card__value" href="assets/Curriculo Nicolas.pdf" download="Curriculo-Nicolas-Gabriel-Tomas.pdf">Baixar em PDF</a>
+            </div>
+            <svg class="contact-card__arrow" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg>
+          </li>
+        </ul>
+        <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Nicolas Gabriel Tomás</p>
+        <p class="footer__tagline">Construindo meu caminho na tecnologia, um projeto de cada vez.</p>
+      </div>
+      <ul class="social" aria-label="Redes sociais">
+        <li><a class="social__link" href="https://github.com/nicolasgabrieltomas" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="20" height="20" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+        <li><a class="social__link" href="https://www.linkedin.com/in/nicolas-gabriel-tomas" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a class="social__link" href="https://instagram.com/nicolastomass_" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+        <li><a class="social__link" href="mailto:nic.gabriel.tom@gmail.com" aria-label="Email"><svg width="20" height="20" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year">2026</span> Nicolas Gabriel Tomás. Todos os direitos reservados.</p>
+      <a href="#inicio" class="footer__top">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
-
 </html>
