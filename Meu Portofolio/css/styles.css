@@ -649,40 +649,6 @@ dl, dt, dd { margin: 0; }
 
 .projects__more { margin-top: 32px; text-align: center; }
 
-/* Mockup ilustrativo do portal de vendas */
-.mock {
-  position: absolute;
-  inset: 28px 0 0 28px;
-  border-radius: 14px 0 0 0;
-  border: 1px solid var(--border-strong);
-  border-right: 0;
-  border-bottom: 0;
-  background: #0d1118;
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.mock__bar {
-  display: flex;
-  gap: 6px;
-  padding: 12px 14px;
-  border-bottom: 1px solid var(--border);
-}
-.mock__bar span { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); }
-.mock__bar span:first-child { background: rgba(62, 197, 255, 0.7); }
-.mock__body { flex: 1; display: grid; grid-template-columns: 74px 1fr 92px; min-height: 0; }
-.mock i, .mock b { display: block; border-radius: 6px; background: rgba(255, 255, 255, 0.07); }
-.mock__side { padding: 14px 12px; display: grid; gap: 10px; align-content: start; border-right: 1px solid var(--border); }
-.mock__side i { height: 10px; }
-.mock__search { height: 22px !important; background: rgba(62, 197, 255, 0.15) !important; border: 1px solid rgba(62, 197, 255, 0.3); }
-.mock__main { padding: 14px; }
-.mock__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.mock__grid i { aspect-ratio: 1 / 0.9; background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04)); }
-.mock__cart { padding: 14px 12px; display: grid; gap: 10px; align-content: start; border-left: 1px solid var(--border); }
-.mock__cart i { height: 10px; }
-.mock__cart b { height: 26px; margin-top: 6px; background: var(--accent); opacity: 0.85; }
-
 /* 9. Habilidades -------------------------------------------------------- */
 .skills {
   display: grid;
@@ -1101,8 +1067,6 @@ dl, dt, dd { margin: 0; }
   }
   .photo-card__facts dl > div { grid-template-columns: 1fr; gap: 2px; }
 
-  .mock { inset: 20px 0 0 20px; }
-  .mock__body { grid-template-columns: 56px 1fr 70px; }
 
   .timeline { padding-left: 26px; }
   .timeline__marker { left: -26px; }
