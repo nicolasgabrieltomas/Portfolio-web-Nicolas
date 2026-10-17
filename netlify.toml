@@ -2,7 +2,7 @@
   publish = "Meu Portofolio"
   command = ""
 
-# Cache longo para assets (fotos, css, js) — o HTML continua sempre atualizado
+# Cache longo para assets (fotos, css, js). O HTML continua sempre atualizado
 [[headers]]
   for = "/assets/*"
   [headers.values]
