@@ -11,9 +11,11 @@ O que carrega de fora são apenas as fontes do Google Fonts.
 Meu Portofolio/
 ├── index.html          # conteúdo e estrutura (seções marcadas por comentários)
 ├── css/styles.css      # design system em :root + estilos por seção
-├── js/main.js          # header, menu mobile, seção ativa, vitrine, animações, copiar email
+├── js/main.js          # menu, seção ativa, animações, detalhes dos projetos,
+│                       # escolha do tipo de site (WhatsApp/email) e copiar email
+├── js/efeitos.js       # efeitos de cursor (opcional: o site funciona sem ele)
 ├── assets/
-│   ├── projetos/       # capturas dos sites dos clientes (webp, 1200×750)
+│   ├── projetos/       # capturas reais: nome.webp (1200×750) e nome-mobile.webp (440×952)
 │   ├── nicolas-hero.webp
 │   ├── og-image.jpg    # imagem de compartilhamento social
 │   ├── favicon.svg
@@ -24,8 +26,6 @@ netlify.toml            # pasta publicada + headers de cache e segurança
 
 ## Rodar localmente
 
-Abra `Meu Portofolio/index.html` no navegador, ou sirva a pasta:
-
 ```bash
 npx serve "Meu Portofolio"
 ```
@@ -34,27 +34,38 @@ Não há etapa de build: o que está na pasta é o que vai para o ar.
 
 ## Como atualizar
 
-### Adicionar um projeto em destaque
+### Adicionar um projeto
 
-1. Gere a captura do site em 1200×750 e salve em `assets/projetos/nome.webp`.
-2. Em `index.html`, duplique um bloco `<article class="work reveal">` dentro de `.works`
-   e preencha: número/setor (`work__index`), nome, linha de apoio, descrição,
-   lista do que foi feito, tecnologias (`stack`) e o link do site.
-3. Para alternar o lado da imagem não é preciso fazer nada, o CSS inverte
-   automaticamente nos itens pares.
+1. Salve as capturas em `assets/projetos/`: `nome.webp` (computador, 1200×750) e
+   `nome-mobile.webp` (celular, 440×952).
+2. Em `index.html`, duplique um `<article class="proj ...">` dentro de `.proj-grid`
+   (ou um `<article class="other">` em "Outros projetos") e troque textos, links e imagens.
+   - Na grade, use `proj--wide` e `proj--narrow` em pares, alternando a ordem a cada linha.
+3. Cada card tem um `<template class="detail-tpl">` com o conteúdo da janela de detalhes
+   (contexto, solução, o que foi desenvolvido, tecnologias). O botão "Conhecer o projeto"
+   aparece sozinho quando o template existe.
+4. Atualize a ficha técnica do topo (número de sites e setores).
 
-### Adicionar um projeto complementar
+Regra do projeto: não usar numeração decorativa (01, 02, círculos numerados) em lugar nenhum.
 
-Duplique um `<li>` dentro de `.mini-grid` e preencha os mesmos campos, em versão curta.
+### Escolha do tipo de site e WhatsApp
 
-### Trocar cores e fontes
+Os textos de cada opção, as mensagens e o número ficam no objeto `OPCOES` e nas constantes
+`WHATSAPP` e `EMAIL` em `js/main.js`. A conversa só abre quando o visitante clica no botão,
+e nada é armazenado.
 
-Tudo fica nas variáveis do `:root`, no início de `css/styles.css`.
-A cor de destaque é `--accent`.
+### Efeitos de cursor
+
+Ficam em `js/efeitos.js`: iluminação que acompanha o mouse, borda iluminada nos cards
+(`data-spotlight`) e profundidade na composição do topo (`data-depth`).
+Só rodam com mouse e sem preferência por movimento reduzido. Para desligar tudo,
+basta remover a linha do `efeitos.js` no fim do `index.html`.
+
+### Cores e fontes
+
+Variáveis no `:root`, no início de `css/styles.css`. A cor de destaque é `--accent`.
 
 ### Capturar a tela de um site
-
-Com o Chrome instalado:
 
 ```bash
 chrome --headless=new --hide-scrollbars --window-size=1440,900 --screenshot=saida.png https://site.com
@@ -65,5 +76,4 @@ Se o site tiver animações de entrada, acrescente `--force-prefers-reduced-moti
 ## Publicação
 
 Deploy automático na Netlify a cada push na branch `main`.
-A pasta publicada (`Meu Portofolio`) está fixada em `netlify.toml`, então não depende
-da configuração do painel.
+A pasta publicada (`Meu Portofolio`) está fixada em `netlify.toml`.
